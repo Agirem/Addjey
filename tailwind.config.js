@@ -36,7 +36,7 @@ module.exports = {
       'g2' : '#4144F1',
       'tg1' : '#60A5FA',
       'tg2' : '#6C71EE',
-      'noir' : '#011A32;',
+      'noir' : '#011A32',
 
 
 
