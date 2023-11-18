@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Addjey</title>
+    <link rel="stylesheet" href="./build/assets/css/style.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+</head>
+<body class="bg-gray-200 h-screen flex items-center justify-center" onload="generatePassword()">
+    <div class="max-w-md mx-auto bg-white p-4 rounded-md shadow-md">
+        <h1 class="text-2xl font-primary font-semibold mb-4">Addjey Password Generator</h1>
+
+        <div class="mb-4">
+            <label for="reference" class="block text-sm">Reference</label>
+            <input type="text" id="reference" name="reference" class="mt-1 p-2 w-full border rounded-md">
+        </div>
+        
+        <div class="mb-4">
+            <label for="length" class="block text-sm font-medium  ">Password Length</label>
+            <input type="number" id="length" name="length" min="1" max="50" class="mt-1 p-2 w-full border rounded-md">
+        </div>
+
+        <div class="mb-4">
+            <label class="block text-sm font-medium  ">Include:</label>
+            <input type="checkbox" id="uppercase" name="uppercase" class="mr-2" checked onchange="generatePassword()"> Uppercase
+            <input type="checkbox" id="lowercase" name="lowercase" class="mx-2" checked onchange="generatePassword()"> Lowercase
+            <input type="checkbox" id="numbers" name="numbers" class="mx-2" checked onchange="generatePassword()"> Numbers
+            <input type="checkbox" id="symbols" name="symbols" class="ml-2" checked onchange="generatePassword()"> Symbols
+        </div>
+
+        <button onclick="generatePassword()" class="bg-blue-500 text-white px-4 py-2 rounded-md mb-4">Generate Password</button>
+
+        <input type="text" id="password" class="mt-1 p-2 w-full border rounded-md mb-4" readonly>
+
+        <button onclick="copyPassword()" class="bg-green-500 text-white px-4 py-2 rounded-md mr-2">Copy Password</button>
+        <button onclick="shareOnTelegram()" class="bg-blue-400 text-white px-4 py-2 rounded-md">Share on Telegram</button>
+    </div>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <script src="./src/assets/js/script.js"></script>
+    <script src="../path/to/flowbite/dist/flowbite.min.js"></script>
+</body>
+</html>
