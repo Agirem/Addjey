@@ -1,6 +1,8 @@
 // Fonction pour générer un mot de passe aléatoire
  function generatePassword() {
-    const length = document.getElementById('length').value;
+    const minLength = 8;
+    const lengthInput = document.getElementById('length');
+    const length = lengthInput.value;
     const uppercase = document.getElementById('uppercase').checked;
     const lowercase = document.getElementById('lowercase').checked;
     const numbers = document.getElementById('numbers').checked;
@@ -16,6 +18,16 @@
     if (lowercase) allChars += lowercaseChars;
     if (numbers) allChars += numberChars;
     if (symbols) allChars += symbolChars;
+
+    if (length < minLength) {
+        lengthInput.style.border = '2px solid red';
+        lengthInput.setCustomValidity('Le mot de passe doit avoir au moins 8 caractères.');
+        lengthInput.reportValidity();
+        return;
+    } else {
+        lengthInput.style.border = ''; // Réinitialise la bordure à sa valeur par défaut
+        lengthInput.setCustomValidity('');
+    }
 
     let password = '';
     for (let i = 0; i < length; i++) {
